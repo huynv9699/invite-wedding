@@ -7,8 +7,8 @@
 window.WEDDING_CONFIG = {
   // 1. Thông tin Cô Dâu & Chú Rể
   groom: {
-    firstName: "Minh Quân",
-    fullName: "Nguyễn Minh Quân",
+    firstName: "Minh Hoàng",
+    fullName: "Bùi Minh Hoàng",
     parents: {
       father: "Ông Nguyễn Văn An",
       mother: "Bà Trần Thị Bình"
@@ -26,14 +26,14 @@ window.WEDDING_CONFIG = {
     }
   },
   bride: {
-    firstName: "Thanh Trúc",
-    fullName: "Lê Thanh Trúc",
+    firstName: "Mến",
+    fullName: "Trần Thị Mến",
     parents: {
       father: "Ông Lê Hoàng Nam",
       mother: "Bà Phạm Thu Thủy"
     },
     address: "Quận 3, TP. Hồ Chí Minh",
-    bio: "Cô gái dịu dàng, yêu hoa cỏ và những giai điệu acoustic. Với Trúc, Quân là mảnh ghép hoàn hảo mang đến sự bình yên.",
+    bio: "Cô gái dịu dàng, yêu hoa cỏ và những giai điệu acoustic. Cả hai là mảnh ghép hoàn hảo, mang đến cho nhau sự bình yên.",
     avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80",
     bank: {
       bankName: "Techcombank (TCB)",
@@ -46,10 +46,10 @@ window.WEDDING_CONFIG = {
 
   // 2. Ngày giờ & Sự kiện chính (Định dạng ISO: YYYY-MM-DDTHH:mm:ss để đếm ngược chính xác)
   weddingDate: {
-    isoDate: "2026-12-20T18:00:00",
-    displayDate: "20 . 12 . 2026",
-    dayOfWeek: "Chủ Nhật",
-    lunarDate: "Nhằm ngày 12 tháng 11 năm Bính Ngọ",
+    isoDate: "2026-11-28T18:00:00",
+    displayDate: "28 . 11 . 2026",
+    dayOfWeek: "Thứ Bảy",
+    lunarDate: "Nhằm ngày 20 tháng 10 năm 2026",
     heroImage: "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1800&q=85",
     quote: "Hạnh phúc không phải là điểm đến, mà là hành trình chúng ta nắm tay nhau đi qua năm tháng."
   },
@@ -82,7 +82,7 @@ window.WEDDING_CONFIG = {
       id: "vu-quy",
       title: "Lễ Vu Quy (Nhà Gái)",
       time: "09:00 Sáng",
-      date: "Chủ Nhật, 20/12/2026",
+      date: "Thứ Bảy, 28/11/2026",
       venue: "Tư Gia Nhà Gái",
       address: "123 Nguyễn Đình Chiểu, Quận 3, TP. Hồ Chí Minh",
       mapLink: "https://maps.google.com/?q=Nguyen+Dinh+Chieu+District+3+HCMC",
@@ -93,7 +93,7 @@ window.WEDDING_CONFIG = {
       id: "thanh-hon",
       title: "Lễ Thành Hôn (Nhà Trai)",
       time: "11:00 Trưa",
-      date: "Chủ Nhật, 20/12/2026",
+      date: "Thứ Bảy, 28/11/2026",
       venue: "Tư Gia Nhà Trai",
       address: "456 Lê Lợi, Quận 1, TP. Hồ Chí Minh",
       mapLink: "https://maps.google.com/?q=Le+Loi+District+1+HCMC",
@@ -104,7 +104,7 @@ window.WEDDING_CONFIG = {
       id: "tiec-cuoi",
       title: "Tiệc Cưới Thân Mật",
       time: "18:00 Tối (Đón khách) | 19:00 Khai tiệc",
-      date: "Chủ Nhật, 20/12/2026",
+      date: "Thứ Bảy, 28/11/2026",
       venue: "Trung Tâm Hội Nghị GEM Center (Sảnh Castor - Tầng 3)",
       address: "08 Nguyễn Bỉnh Khiêm, Đa Kao, Quận 1, TP. Hồ Chí Minh",
       mapLink: "https://maps.google.com/?q=GEM+Center+Ho+Chi+Minh",
@@ -156,7 +156,7 @@ window.WEDDING_CONFIG = {
     {
       name: "Gia đình chú Tám",
       relation: "Họ hàng nhà Trai",
-      message: "Chúc hai cháu Minh Quân - Thanh Trúc trăm năm tình viên mãn, bạc đầu nghĩa phu thê! Sớm có thiên thần nhỏ nhé!",
+      message: "Chúc hai cháu Minh Hoàng - Mến trăm năm tình viên mãn, bạc đầu nghĩa phu thê! Sớm có thiên thần nhỏ nhé!",
       time: "Vừa xong"
     },
     {
@@ -168,7 +168,7 @@ window.WEDDING_CONFIG = {
     {
       name: "Minh Anh & Hoàng Bảo",
       relation: "Bạn Cô Dâu",
-      message: "Cô dâu Thanh Trúc của tụi mình xinh đẹp tuyệt vời! Chúc hai bạn có một hành trình hôn nhân ngập tràn tiếng cười và hoa hồng.",
+      message: "Cô dâu Mến của tụi mình xinh đẹp tuyệt vời! Chúc hai bạn có một hành trình hôn nhân ngập tràn tiếng cười và hoa hồng.",
       time: "1 ngày trước"
     }
   ]
