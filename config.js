@@ -7,7 +7,7 @@
 window.WEDDING_CONFIG = {
   // 1. Thông tin Cô Dâu & Chú Rể
   groom: {
-    firstName: "Minh Hoàng",
+    firstName: "Hoàng",
     fullName: "Bùi Minh Hoàng",
     parents: {
       father: "Ông Nguyễn Văn An",
@@ -156,7 +156,7 @@ window.WEDDING_CONFIG = {
     {
       name: "Gia đình chú Tám",
       relation: "Họ hàng nhà Trai",
-      message: "Chúc hai cháu Minh Hoàng - Mến trăm năm tình viên mãn, bạc đầu nghĩa phu thê! Sớm có thiên thần nhỏ nhé!",
+      message: "Chúc hai cháu Minh Hoàng - Trần Mến trăm năm tình viên mãn, bạc đầu nghĩa phu thê! Sớm có thiên thần nhỏ nhé!",
       time: "Vừa xong"
     },
     {
@@ -168,7 +168,7 @@ window.WEDDING_CONFIG = {
     {
       name: "Minh Anh & Hoàng Bảo",
       relation: "Bạn Cô Dâu",
-      message: "Cô dâu Mến của tụi mình xinh đẹp tuyệt vời! Chúc hai bạn có một hành trình hôn nhân ngập tràn tiếng cười và hoa hồng.",
+      message: "Cô dâu Trần Mến của tụi mình xinh đẹp tuyệt vời! Chúc hai bạn có một hành trình hôn nhân ngập tràn tiếng cười và hoa hồng.",
       time: "1 ngày trước"
     }
   ]
