@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Thiệp Mời Cưới | Minh Quân & Thanh Trúc</title>
+  <meta name="description" content="Trân trọng kính mời Quý khách đến dự lễ thành hôn của Minh Quân & Thanh Trúc." />
+  <meta property="og:title" content="Thiệp Mời Cưới | Minh Quân & Thanh Trúc" />
+  <meta property="og:description" content="Sự hiện diện của bạn là niềm vinh hạnh lớn nhất trong ngày vui của chúng mình!" />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=80" />
+
+  <!-- Google Fonts: Cormorant Garamond, Great Vibes & Plus Jakarta Sans (Hỗ trợ đầy đủ Tiếng Việt) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Great+Vibes&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body class="locked-scroll">
+  <!-- HIỆU ỨNG CÁNH HOA RƠI -->
+  <canvas id="petals-canvas" aria-hidden="true"></canvas>
+
+  <!-- MÀN HÌNH PHONG BÌ MỞ THIỆP (ENVELOPE INTRO OVERLAY) -->
+  <div id="envelope-overlay" class="envelope-overlay">
+    <div class="envelope-card">
+      <div class="envelope-ornament-top">
+        <span class="monogram-badge" id="intro-monogram">Q &amp; T</span>
+      </div>
+      <p class="envelope-subtitle">SAVE THE DATE</p>
+      <h1 class="envelope-couple-names">
+        <span id="intro-groom">Minh Quân</span>
+        <span class="amp">&amp;</span>
+        <span id="intro-bride">Thanh Trúc</span>
+      </h1>
+      <div class="envelope-divider">
+        <span class="line"></span>
+        <i class="fa-solid fa-heart"></i>
+        <span class="line"></span>
+      </div>
+      <p class="envelope-guest-greeting">Trân trọng kính mời</p>
+      <h2 class="envelope-guest-name" id="intro-guest-name">Quý Khách</h2>
+      <p class="envelope-date" id="intro-date">20 . 12 . 2026</p>
+
+      <button id="open-invitation-btn" class="btn-gold-seal">
+        <span class="seal-icon"><i class="fa-solid fa-envelope-open-text"></i></span>
+        <span>Mở Thiệp Mời</span>
+      </button>
+      <p class="envelope-hint"><i class="fa-solid fa-music"></i> Nhấn mở thiệp để thưởng thức cùng âm nhạc</p>
+    </div>
+  </div>
+
+  <!-- THANH ĐIỀU HƯỚNG NỔI -->
+  <header class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#hero" class="nav-logo" id="nav-logo">Q <span>&amp;</span> T</a>
+      <nav class="nav-links">
+        <a href="#couple">Cặp Đôi</a>
+        <a href="#story">Chuyện Tình</a>
+        <a href="#events">Sự Kiện</a>
+        <a href="#gallery">Album Ảnh</a>
+        <a href="#rsvp">Xác Nhận &amp; Lời Chúc</a>
+        <a href="#gift" class="nav-gift-btn"><i class="fa-solid fa-gift"></i> Mừng Cưới</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO BANNER -->
+  <section id="hero" class="hero-section">
+    <div class="hero-bg" id="hero-bg"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content fade-up">
+      <p class="hero-eyebrow">WE ARE GETTING MARRIED</p>
+      <h1 class="hero-title">
+        <span id="hero-groom">Minh Quân</span>
+        <span class="hero-amp">&amp;</span>
+        <span id="hero-bride">Thanh Trúc</span>
+      </h1>
+      <p class="hero-guest-banner">
+        Trân trọng đón tiếp <strong id="hero-guest-name">Quý Khách</strong> đến chung vui cùng gia đình chúng tôi
+      </p>
+      <div class="hero-date-box">
+        <span class="hero-day" id="hero-day">Chủ Nhật</span>
+        <span class="hero-date" id="hero-date">20 . 12 . 2026</span>
+        <span class="hero-lunar" id="hero-lunar">Nhằm ngày 12 tháng 11 năm Bính Ngọ</span>
+      </div>
+
+      <!-- ĐẾM NGƯỢC NGÀY CƯỚI -->
+      <div class="countdown-wrapper" id="countdown">
+        <div class="countdown-item">
+          <span class="countdown-number" id="cd-days">00</span>
+          <span class="countdown-label">Ngày</span>
+        </div>
+        <div class="countdown-item">
+          <span class="countdown-number" id="cd-hours">00</span>
+          <span class="countdown-label">Giờ</span>
+        </div>
+        <div class="countdown-item">
+          <span class="countdown-number" id="cd-minutes">00</span>
+          <span class="countdown-label">Phút</span>
+        </div>
+        <div class="countdown-item">
+          <span class="countdown-number" id="cd-seconds">00</span>
+          <span class="countdown-label">Giây</span>
+        </div>
+      </div>
+
+      <div class="hero-actions">
+        <a href="#rsvp" class="btn-primary"><i class="fa-regular fa-calendar-check"></i> Xác Nhận Tham Dự</a>
+        <a href="#gift" class="btn-outline-light"><i class="fa-solid fa-heart"></i> Gửi Quà Mừng</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CÔ DÂU & CHÚ RỂ + GIA ĐÌNH HAI BÊN -->
+  <section id="couple" class="section couple-section">
+    <div class="container">
+      <div class="section-header fade-up">
+        <p class="section-subtitle">HAPPY COUPLE</p>
+        <h2 class="section-title">Cô Dâu &amp; Chú Rể</h2>
+        <div class="section-ornament"><i class="fa-solid fa-leaf"></i></div>
+        <p class="section-quote" id="wedding-quote"></p>
+      </div>
+
+      <div class="couple-grid">
+        <!-- Chú Rể -->
+        <div class="couple-card fade-up">
+          <div class="couple-img-frame">
+            <img id="groom-avatar" src="" alt="Chú Rể" loading="lazy" />
+          </div>
+          <span class="couple-role">Chú Rể</span>
+          <h3 class="couple-name" id="groom-fullname">Nguyễn Minh Quân</h3>
+          <p class="couple-bio" id="groom-bio"></p>
+          <div class="family-box">
+            <p class="family-title">Nhà Trai</p>
+            <p id="groom-father"></p>
+            <p id="groom-mother"></p>
+            <p class="family-address" id="groom-address"></p>
+          </div>
+        </div>
+
+        <!-- Cô Dâu -->
+        <div class="couple-card fade-up">
+          <div class="couple-img-frame">
+            <img id="bride-avatar" src="" alt="Cô Dâu" loading="lazy" />
+          </div>
+          <span class="couple-role">Cô Dâu</span>
+          <h3 class="couple-name" id="bride-fullname">Lê Thanh Trúc</h3>
+          <p class="couple-bio" id="bride-bio"></p>
+          <div class="family-box">
+            <p class="family-title">Nhà Gái</p>
+            <p id="bride-father"></p>
+            <p id="bride-mother"></p>
+            <p class="family-address" id="bride-address"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CHUYỆN TÌNH YÊU (LOVE STORY) -->
+  <section id="story" class="section story-section">
+    <div class="container">
+      <div class="section-header fade-up">
+        <p class="section-subtitle">OUR LOVE STORY</p>
+        <h2 class="section-title">Chuyện Tình Yêu</h2>
+        <div class="section-ornament"><i class="fa-regular fa-heart"></i></div>
+      </div>
+
+      <div class="timeline" id="story-timeline">
+        <!-- Được tạo tự động từ config.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- LỊCH TRÌNH SỰ KIỆN & BẢN ĐỒ CHỈ ĐƯỜNG -->
+  <section id="events" class="section events-section">
+    <div class="container">
+      <div class="section-header fade-up">
+        <p class="section-subtitle">WEDDING EVENTS</p>
+        <h2 class="section-title">Lịch Trình &amp; Địa Điểm</h2>
+        <div class="section-ornament"><i class="fa-solid fa-champagne-glasses"></i></div>
+        <p class="section-desc">Trân trọng kính mời Quý khách đến tham dự các nghi lễ và tiệc rượu chung vui cùng gia đình</p>
+      </div>
+
+      <div class="events-grid" id="events-grid">
+        <!-- Được tạo tự động từ config.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ALBUM ẢNH CƯỚI -->
+  <section id="gallery" class="section gallery-section">
+    <div class="container">
+      <div class="section-header fade-up">
+        <p class="section-subtitle">MEMORIES OF LOVE</p>
+        <h2 class="section-title">Album Ảnh Cưới</h2>
+        <div class="section-ornament"><i class="fa-solid fa-camera-retro"></i></div>
+      </div>
+
+      <div class="gallery-grid" id="gallery-grid">
+        <!-- Được tạo tự động từ config.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- FORM XÁC NHẬN THAM DỰ (RSVP) & SỔ LƯU BÚT LỜI CHÚC -->
+  <section id="rsvp" class="section rsvp-section">
+    <div class="container">
+      <div class="section-header fade-up">
+        <p class="section-subtitle">RSVP &amp; GUESTBOOK</p>
+        <h2 class="section-title">Xác Nhận Tham Dự &amp; Gửi Lời Chúc</h2>
+        <div class="section-ornament"><i class="fa-regular fa-envelope"></i></div>
+        <p class="section-desc">Hãy cho chúng mình biết bạn sẽ đến nhé, để gia đình chuẩn bị đón tiếp chu đáo nhất!</p>
+      </div>
+
+      <div class="rsvp-guestbook-layout">
+        <!-- Form RSVP -->
+        <div class="rsvp-card fade-up">
+          <h3 class="card-heading">Gửi Phản Hồi &amp; Lời Chúc</h3>
+          <form id="rsvp-form" class="rsvp-form">
+            <div class="form-group">
+              <label for="guest-name">Tên của bạn <span class="required">*</span></label>
+              <input type="text" id="guest-name" name="name" placeholder="Nhập họ và tên của bạn..." required />
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="guest-phone">Số điện thoại</label>
+                <input type="tel" id="guest-phone" name="phone" placeholder="Ví dụ: 0901234567" />
+              </div>
+              <div class="form-group">
+                <label for="guest-side">Khách mời của</label>
+                <select id="guest-side" name="side">
+                  <option value="Nhà Trai & Nhà Gái">Bạn chung hai bên</option>
+                  <option value="Khách Nhà Trai">Khách Nhà Trai</option>
+                  <option value="Khách Nhà Gái">Khách Nhà Gái</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="guest-attendance">Bạn sẽ tham dự chứ? <span class="required">*</span></label>
+                <select id="guest-attendance" name="attendance" required>
+                  <option value="Chắc chắn tham dự">Mình chắc chắn sẽ đến!</option>
+                  <option value="Xin phép vắng mặt">Tiếc quá, mình bận mất rồi</option>
+                  <option value="Chưa chắc chắn">Mình sẽ báo lại sau nhé</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="guest-count">Số người tham dự</label>
+                <select id="guest-count" name="guests">
+                  <option value="1 người">Đi 1 mình</option>
+                  <option value="2 người">Đi 2 người</option>
+                  <option value="Đi cùng gia đình">Đi cùng gia đình</option>
+                  <option value="0 (Gửi lời chúc)">Chỉ gửi lời chúc</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="guest-message">Lời chúc gửi đến Cô Dâu &amp; Chú Rể <span class="required">*</span></label>
+              <textarea id="guest-message" name="message" rows="4" placeholder="Viết lời chúc phúc ngọt ngào tới hai vợ chồng mình nhé..." required></textarea>
+              <div class="wish-suggestions">
+                <span>Gợi ý nhanh:</span>
+                <button type="button" class="chip-suggest" data-wish="Chúc hai bạn trăm năm hạnh phúc, sớm sinh quý tử!">Trăm năm hạnh phúc</button>
+                <button type="button" class="chip-suggest" data-wish="Chúc mừng hạnh phúc hai bạn! Mãi yêu thương và đồng hành cùng nhau nhé!">Mãi yêu thương nhau</button>
+              </div>
+            </div>
+
+            <button type="submit" id="rsvp-submit-btn" class="btn-primary btn-full">
+              <i class="fa-regular fa-paper-plane"></i> Gửi Xác Nhận &amp; Lời Chúc
+            </button>
+            <p id="rsvp-status" class="form-status" aria-live="polite"></p>
+          </form>
+        </div>
+
+        <!-- Danh sách Sổ Lưu Bút -->
+        <div class="guestbook-card fade-up">
+          <div class="guestbook-header">
+            <h3 class="card-heading">Sổ Lưu Bút Yêu Thương</h3>
+            <span class="wish-count-badge" id="wish-count">3 lời chúc</span>
+          </div>
+          <div class="wishes-list" id="wishes-list">
+            <!-- Được tạo tự động từ config.js + LocalStorage + Google Sheets -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HỘP MỪNG CƯỚI (MÃ QR NGÂN HÀNG) -->
+  <section id="gift" class="section gift-section">
+    <div class="container">
+      <div class="section-header fade-up">
+        <p class="section-subtitle">WEDDING GIFT</p>
+        <h2 class="section-title">Hộp Mừng Cưới</h2>
+        <div class="section-ornament"><i class="fa-solid fa-gift"></i></div>
+        <p class="section-desc">
+          Sự hiện diện của Quý khách là món quà quý giá nhất với chúng mình. Nếu Quý khách ở xa muốn gửi chút quà mừng đến hai vợ chồng, xin vui lòng quét mã QR bên dưới:
+        </p>
+      </div>
+
+      <div class="gift-grid">
+        <!-- QR Chú Rể -->
+        <div class="gift-card fade-up">
+          <span class="gift-badge">Mừng Cưới Chú Rể</span>
+          <h3 id="gift-groom-name">Nguyễn Minh Quân</h3>
+          <div class="qr-wrapper">
+            <img id="groom-qr" src="" alt="Mã QR Ngân Hàng Chú Rể" loading="lazy" />
+          </div>
+          <div class="bank-details">
+            <p>Ngân hàng: <strong id="groom-bank-name"></strong></p>
+            <p>Chủ TK: <strong id="groom-account-holder"></strong></p>
+            <p>Số TK: <strong id="groom-account-number"></strong></p>
+          </div>
+          <button type="button" class="btn-outline copy-btn" data-copy-target="groom-account-number">
+            <i class="fa-regular fa-copy"></i> Sao chép Số tài khoản
+          </button>
+        </div>
+
+        <!-- QR Cô Dâu -->
+        <div class="gift-card fade-up">
+          <span class="gift-badge">Mừng Cưới Cô Dâu</span>
+          <h3 id="gift-bride-name">Lê Thanh Trúc</h3>
+          <div class="qr-wrapper">
+            <img id="bride-qr" src="" alt="Mã QR Ngân Hàng Cô Dâu" loading="lazy" />
+          </div>
+          <div class="bank-details">
+            <p>Ngân hàng: <strong id="bride-bank-name"></strong></p>
+            <p>Chủ TK: <strong id="bride-account-holder"></strong></p>
+            <p>Số TK: <strong id="bride-account-number"></strong></p>
+          </div>
+          <button type="button" class="btn-outline copy-btn" data-copy-target="bride-account-number">
+            <i class="fa-regular fa-copy"></i> Sao chép Số tài khoản
+          </button>
+        </div>
+      </div>
+
+      <!-- Công cụ Tạo Link Thiệp Cá Nhân Hóa cho Khách Mời -->
+      <div class="share-generator fade-up">
+        <div class="share-generator-header">
+          <h4><i class="fa-solid fa-wand-magic-sparkles"></i> Tạo Link Thiệp Ghi Tên Khách Mời</h4>
+          <p>Nhập tên khách mời (VD: <em>Anh Tuấn &amp; Người thương</em>) để tạo đường link thiệp hiển thị đúng tên người nhận trên bìa thiệp:</p>
+        </div>
+        <div class="share-generator-form">
+          <input type="text" id="custom-guest-input" placeholder="Nhập tên khách mời cần gửi thiệp..." />
+          <button type="button" id="copy-custom-link-btn" class="btn-primary">
+            <i class="fa-solid fa-link"></i> Sao chép Link Thiệp
+          </button>
+        </div>
+        <p id="custom-link-preview" class="custom-link-preview"></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <h2 class="footer-couple" id="footer-couple">Minh Quân &amp; Thanh Trúc</h2>
+      <p class="footer-thankyou">Thank You For Being Part Of Our Special Day!</p>
+      <p class="footer-date" id="footer-date">20 . 12 . 2026</p>
+    </div>
+  </footer>
+
+  <!-- LIGHTBOX XEM ẢNH PHÓNG TO -->
+  <div id="lightbox" class="lightbox" aria-hidden="true">
+    <button class="lightbox-close" id="lightbox-close" aria-label="Đóng">&times;</button>
+    <button class="lightbox-nav prev" id="lightbox-prev" aria-label="Ảnh trước"><i class="fa-solid fa-chevron-left"></i></button>
+    <div class="lightbox-content">
+      <img id="lightbox-img" src="" alt="Ảnh cưới phóng to" />
+      <p id="lightbox-caption"></p>
+    </div>
+    <button class="lightbox-nav next" id="lightbox-next" aria-label="Ảnh tiếp theo"><i class="fa-solid fa-chevron-right"></i></button>
+  </div>
+
+  <!-- NÚT BẬT / TẮT NHẠC NỀN NỔI -->
+  <button id="music-toggle" class="music-fab" aria-label="Bật hoặc tắt nhạc nền" title="Bật/Tắt nhạc nền">
+    <i class="fa-solid fa-compact-disc"></i>
+    <span class="music-waves">
+      <span></span><span></span><span></span>
+    </span>
+  </button>
+  <audio id="bg-music" loop preload="auto"></audio>
+
+  <!-- SCRIPTS -->
+  <script src="./config.js"></script>
+  <script src="./app.js"></script>
+</body>
+</html>
+
